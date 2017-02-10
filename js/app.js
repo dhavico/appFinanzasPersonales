@@ -43,5 +43,5 @@ angular.module('finanzaPersonal', ['ngAnimate', 'firebase'])
 			};
 			return total;
 		}
-		setTimeout(function(){$(".page1").css("opacity","1");},1000);
+		setTimeout(function(){$(".page1").css("opacity","1");},3000);
 	});

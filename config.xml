@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.finanzasPersonalaes.phonegap" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0" versionCode="10">
+<widget id="com.finanzasPersonalaes.phonegap" version="1.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0" versionCode="10">
     <name>Finanzas Personales</name>
     <description>
         Finanzas Personales es una aplicación que te permite llevar el control de tus ingresos y egresos mensuales.
@@ -31,24 +31,25 @@
     <plugin name="cordova-plugin-vibration" source="npm" spec="~2.1.0" />
     <plugin name="cordova-plugin-whitelist" source="npm" spec="~1.2.1" />
     <platform name="android">
-        <icon density="ldpi" src="img/logo.png" />
-        <icon density="mdpi" src="img/logo.png" />
-        <icon density="hdpi" src="img/logo.png" />
-        <icon density="xhdpi" src="img/logo.png" />
-        <icon density="xxhdpi" src="img/logo.png" />
-        <icon density="xxxhdpi" src="img/logo.png" />
-        <splash density="land-ldpi" src="img/logo.png" />
-        <splash density="land-mdpi" src="img/logo.png" />
-        <splash density="land-hdpi" src="img/logo.png" />
-        <splash density="land-xhdpi" src="img/logo.png" />
-        <splash density="land-xxhdpi" src="img/logo.png" />
-        <splash density="land-xxxhdpi" src="img/logo.png" />
-        <splash density="port-ldpi" src="img/logo.png" />
-        <splash density="port-mdpi" src="img/logo.png" />
-        <splash density="port-hdpi" src="img/logo.png" />
-        <splash density="port-xhdpi" src="img/logo.png" />
-        <splash density="port-xxhdpi" src="img/logo.png" />
-        <splash density="port-xxxhdpi" src="img/logo.png" />
+		<icon src="img/logo.png" />
+        <icon density="ldpi" src="img/logo.png" gap:platform="android" />
+        <icon density="mdpi" src="img/logo.png" gap:platform="android" />
+        <icon density="hdpi" src="img/logo.png" gap:platform="android" />
+        <icon density="xhdpi" src="img/logo.png" gap:platform="android" />
+        <icon density="xxhdpi" src="img/logo.png" gap:platform="android" />
+        <icon density="xxxhdpi" src="img/logo.png" gap:platform="android" />
+        <splash density="land-ldpi" src="img/logo.png" gap:platform="android" />
+        <splash density="land-mdpi" src="img/logo.png" gap:platform="android" />
+        <splash density="land-hdpi" src="img/logo.png" gap:platform="android" />
+        <splash density="land-xhdpi" src="img/logo.png" gap:platform="android" />
+        <splash density="land-xxhdpi" src="img/logo.png" gap:platform="android" />
+        <splash density="land-xxxhdpi" src="img/logo.png" gap:platform="android" />
+        <splash density="port-ldpi" src="img/logo.png" gap:platform="android" />
+        <splash density="port-mdpi" src="img/logo.png" gap:platform="android" />
+        <splash density="port-hdpi" src="img/logo.png" gap:platform="android" />
+        <splash density="port-xhdpi" src="img/logo.png" gap:platform="android" />
+        <splash density="port-xxhdpi" src="img/logo.png" gap:platform="android" />
+        <splash density="port-xxxhdpi" src="img/logo.png" gap:platform="android" />
     </platform>
     <access origin="*" />
     <allow-intent href="http://*/*" />

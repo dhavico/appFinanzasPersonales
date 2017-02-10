@@ -2,6 +2,7 @@
 <html ng-app="finanzaPersonal">
 	<head>
 		<meta charset="utf-8">
+		<meta developer="David Jesús Ortega Baca">
 		<title>title</title>
 		<meta name="viewport" content="width=device-width,user-scalable=no" />
 		<link href='https://fonts.googleapis.com/css?family=Exo+2:300,400,500,700' rel='stylesheet' type='text/css'>
@@ -13,7 +14,7 @@
 		<div class="textLogo">Finanzas Personales</div>
 		<div class="logo fa fa-money fa-5x"></div>
 		<div class="ui-progress"></div>
-		<div class="autor">dhavico - v1.0.0</div>
+		<div class="autor">dhavico - v1.0.1</div>
 		<div class="page1" ng-controller="registroGastos">
 			<div class="header">
 				<i class="fa fa-bars fa-lg"></i>
@@ -40,7 +41,7 @@
 				</div>
 			</div>
 			<div class="footer">
-				<div class="item-total">TOTAL GASTOS AL {{FechaActual | date:'dd/MM/yyyy'}} - <strong>S/. {{getTotalGastos()}}</strong></div><i class="fa fa-calendar fa-lg"></i>
+				<div class="item-total">TOTAL GASTOS<br/>AL {{FechaActual | date:'dd/MM/yyyy'}}<strong>S/. {{getTotalGastos()}}</strong></div><i class="fa fa-calendar fa-lg"></i>
 			</div>
 		</div>
 		<script src="lib/angular.min.js"></script>
