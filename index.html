@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html ng-app="finanzaPersonal">
+	<head>
+		<meta charset="utf-8">
+		<title>title</title>
+		<meta name="viewport" content="width=device-width,user-scalable=no" />
+		<link href='https://fonts.googleapis.com/css?family=Exo+2:300,400,500,700' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" href="css/bootstrap.css">
+		<link rel="stylesheet" href="css/style.css">
+		<link href="css/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+	</head>
+	<body>
+		<div class="textLogo">Finanzas Personales</div>
+		<div class="logo fa fa-money fa-5x"></div>
+		<div class="ui-progress"></div>
+		<div class="autor">dhavico - v1.0.0</div>
+		<div class="page1" ng-controller="registroGastos">
+			<div class="header">
+				<i class="fa fa-bars fa-lg"></i>
+				Registro de Gastos
+			</div>
+			<div class="body">
+				<div class="content-busqueda">
+					<div class="ui-select">
+						<select id="IdConcepto" ng-model="nombreCategoria">
+							<option hidden value="">SELECCIONE</option>
+							<option ng-repeat="item in listaCategorias" value="{{item.value}}">{{item.text}}</option>
+						</select>
+					</div>
+					<input type="number" class="ui-text" ng-model="monto">
+					<button class="ui-button" ng-click="agregarGasto()"><i class="fa fa-plus"></i>Agregar</button>
+				</div>
+				<div class="content-resultados" >
+					<div class="item" ng-repeat="item in listaGastos"><span>S/. {{item.monto}} - {{item.nombreCategoria}}</span><i class="fa fa-times fa-lg" ng-click="eliminarGasto()"></i></div>
+
+
+					<!--<div class="item"><span>S/. 540 - Compras para la casa</span><i class="fa fa-times fa-lg"></i></div>
+					
+					<i class="fa fa-pencil fa-lg"></i>-->
+				</div>
+			</div>
+			<div class="footer">
+				<div class="item-total">TOTAL GASTOS AL {{FechaActual | date:'dd/MM/yyyy'}} - <strong>S/. {{getTotalGastos()}}</strong></div><i class="fa fa-calendar fa-lg"></i>
+			</div>
+		</div>
+		<script src="lib/angular.min.js"></script>
+		<script src="lib/angular-animate.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/3.6.6/firebase.js"></script>
+		<script src="https://cdn.firebase.com/libs/angularfire/2.3.0/angularfire.min.js"></script>
+		<script src="js/jquery.js"></script>
+		<script src="lib/bootstrap.js"></script>
+		<script src="js/app.js"></script>
+	</body>
+</html>
