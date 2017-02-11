@@ -14,10 +14,18 @@
 		<div class="textLogo">Finanzas Personales</div>
 		<div class="logo fa fa-money fa-5x"></div>
 		<div class="ui-progress"></div>
-		<div class="autor">dhavico - v1.0.1</div>
-		<div class="page1" ng-controller="registroGastos">
+		<div class="autor">dhavico - v1.0.2</div>
+		<div class="ui-menu" ng-controller="menu">
+			<div class="return"><i class="fa fa-2x fa-arrow-circle-o-left" ng-click="ocultarMenu()"></i></div>
+			<ul>
+				<li ng-click="goPage('page1')"><i class="fa fa-user"></i> Registro de Gastos</li>
+				<li ng-click="goPage('page2')"><i class="fa fa-user"></i> Registro de Ingresos</li>
+				<li ng-click="goPage('page3')"><i class="fa fa-user"></i> Balance</li>
+			</ul>
+		</div>
+		<div id="page1" class="page" ng-controller="registroGastos">
 			<div class="header">
-				<i class="fa fa-bars fa-lg"></i>
+				<i class="fa fa-bars fa-lg" ng-click="mostrarMenu()"></i>
 				Registro de Gastos
 			</div>
 			<div class="body">
@@ -25,7 +33,7 @@
 					<div class="ui-select">
 						<select id="IdConcepto" ng-model="nombreCategoria">
 							<option hidden value="">SELECCIONE</option>
-							<option ng-repeat="item in listaCategorias" value="{{item.value}}">{{item.text}}</option>
+							<option ng-repeat="item in listaCategorias" value="{{item.value}}">{{item.value}}</option>
 						</select>
 					</div>
 					<input type="number" class="ui-text" ng-model="monto">
@@ -42,6 +50,36 @@
 			</div>
 			<div class="footer">
 				<div class="item-total">TOTAL GASTOS<br/>AL {{FechaActual | date:'dd/MM/yyyy'}}<strong>S/. {{getTotalGastos()}}</strong></div><i class="fa fa-calendar fa-lg"></i>
+			</div>
+		</div>
+		<div id="page2" class="page" ng-controller="registroIngresos">
+			<div class="header">
+				<i class="fa fa-bars fa-lg" ng-click="mostrarMenu()"></i>
+				Registro de Ingresos
+			</div>
+			<div class="body">
+				<div class="content-busqueda">
+					<div class="ui-select">
+						<select id="IdConcepto" ng-model="nombreCategoria">
+							<option hidden value="">SELECCIONE</option>
+							<option ng-repeat="item in listaCategorias" value="{{item.value}}">{{item.value}}</option>
+						</select>
+					</div>
+					<input type="number" class="ui-text" ng-model="monto">
+					<button class="ui-button" ng-click="agregarIngreso()"><i class="fa fa-plus"></i>Agregar</button>
+				</div>
+				<div class="content-resultados" >
+					<div class="item" ng-repeat="item in listaIngresos"><span>S/. {{item.monto}} - {{item.nombreCategoria}}</span><i class="fa fa-times fa-lg" ng-click="eliminarIngreso()"></i></div>
+				</div>
+			</div>
+			<div class="footer">
+				<div class="item-total">TOTAL INGRESOS<br/>AL {{FechaActual | date:'dd/MM/yyyy'}}<strong>S/. {{getTotalIngresos()}}</strong></div><i class="fa fa-calendar fa-lg"></i>
+			</div>
+		</div>
+		<div id="page3" class="page">
+			<div style="position: absolute;width: 100%;height: 100%;background-color: #f2f2f2;">
+				<img src="img/Logo.png" style="position: absolute;top: calc(50% - 100px);left: calc(50% - 34px);">
+				<h1 style="margin-top: 80%;left: calc(50% - 299px);text-align: center;">Esta opcion estar&aacute; pronto disponible</h1>
 			</div>
 		</div>
 		<script src="lib/angular.min.js"></script>
